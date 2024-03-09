@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css?family=Syne:600%2C500%7CRoboto:400&amp;display=swap" rel="stylesheet" property="stylesheet" media="all" type="text/css"> 
+    <title>Centimeter to Inch</title>
+</head>
+
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Syne', sans-serif;
+    }
+    body{
+        width: 100%;
+        min-height: 100lvh;
+        color: #fff;
+        background-color: rgba(255, 196, 0, 0.634);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .wrapper{
+        width: clamp(500px,40%,400px);
+        min-height: 35lvh;
+        padding: 1rem;
+        margin: 1rem;
+        text-align: center;
+        background-color: black;
+        border-radius: 20px;
+    }
+    .wrapper h2{
+        padding: 1rem 0;
+        color: rgb(255, 238, 0);
+    }
+    .inputdiv input{
+        width: clamp(250px,40%,400px);
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        margin: 1rem 0;
+        border: none;
+        outline: none;
+    }
+    .wrapper div button{
+        margin-bottom: 0.5rem;
+        padding: 0.5rem 1rem;
+        background-color: transparent;
+        color: #fff;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        cursor: pointer;
+        outline: none;
+    }
+    .wrapper div button:hover{
+        background-color: #fff;
+        color: rgb(0, 0, 0);
+        transition: all 0.3s;
+    }
+    #result{
+        padding: 0.5rem 0;
+        font-size: 28px;
+    }
+</style>
+<body>
+    <div class="wrapper">
+        <h2>Centimeter to Inch</h2>
+        <div class="inputdiv">
+            <input type="number" id="input" placeholder="Lenght in cm">
+        </div>
+        <div>
+            <button type="submit" onclick="convert()">Convert to inches</button>
+        </div>
+        <div id="result">
+
+        </div>
+    </div>
+
+    <script>
+    function convert(){
+        const cmval=Number(document.getElementById("input").value);
+        const inchval = cmval/2.54;
+        const result = document.getElementById("result");
+        result.innerHTML = inchval.toFixed(2) +" inch";
+    }
+    </script>
+</body>
+</html>
